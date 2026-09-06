@@ -1,0 +1,735 @@
+<title>묵시록 · THE APOCALYPSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0a0b10;
+  --bg-2:#0f1119;
+  --panel:#14161f;
+  --panel-2:#1a1d29;
+  --line:#282b3a;
+  --line-soft:#20222f;
+  --ink:#e9e6dd;
+  --ink-2:#b8b6b0;
+  --mut:#7d7c86;
+  --mut-2:#5a5966;
+  --gold:#c9a25f;
+  --gold-soft:#8a7642;
+  --red:#c0413f;
+  --violet:#a678c9;
+
+  /* region / faction hues */
+  --empireo:#4fa2e6;
+  --babel:#6b82d4;
+  --lycaon:#8794b0;
+  --avalon:#2fbcac;
+  --gath:#cd7f3c;
+  --salem:#dcae54;
+  --sheol:#d23a48;
+  --limbo:#d4652d;
+  --anna:#6f96ba;
+  --midgard:#6fae52;
+  --dis:#6070b4;
+
+  --sin:#c0413f;
+  --virtue:#a678c9;
+
+  --serif:"Noto Serif KR", Georgia, serif;
+  --sans:"Noto Sans KR", system-ui, sans-serif;
+  --display:"Cinzel", "Noto Serif KR", serif;
+
+  --maxw:1180px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(1100px 600px at 78% -6%, rgba(201,162,95,.08), transparent 60%),
+    radial-gradient(900px 620px at 8% 6%, rgba(80,110,180,.07), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font-family:var(--serif);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* ---------- eyebrow / headings ---------- */
+.eyebrow{
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:500;
+}
+h2.sec-title{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.7rem,3.4vw,2.5rem);
+  letter-spacing:.04em;
+  margin:.5rem 0 .2rem;
+  text-wrap:balance;
+}
+.sec-sub{color:var(--ink-2);font-size:1rem;max-width:60ch;margin:0}
+.sec-head{margin-bottom:2.4rem}
+
+/* ---------- nav ---------- */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,11,16,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px}
+.brand{display:flex;align-items:baseline;gap:.6rem;text-decoration:none}
+.brand .kr{font-family:var(--display);font-weight:700;letter-spacing:.18em;font-size:1.02rem;color:var(--ink)}
+.brand .en{font-family:var(--sans);font-size:.6rem;letter-spacing:.42em;color:var(--gold);text-transform:uppercase}
+nav.links{display:flex;gap:4px;flex-wrap:wrap}
+nav.links a{
+  font-family:var(--sans);font-size:.86rem;font-weight:400;
+  color:var(--ink-2);text-decoration:none;padding:8px 13px;border-radius:8px;
+  transition:color .2s, background .2s;
+}
+nav.links a:hover,nav.links a.active{color:var(--ink);background:rgba(201,162,95,.1)}
+nav.links a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)}
+.hero-in{padding:clamp(3.6rem,9vw,7rem) 0 clamp(3rem,6vw,5rem);position:relative;z-index:2}
+.hero .mark{
+  font-family:var(--sans);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem
+}
+.hero h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2.8rem,9vw,6.2rem);
+  letter-spacing:.06em;line-height:.98;margin:0;
+  background:linear-gradient(180deg,#f4efe3 0%, #cdb488 60%, #937b48 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-wrap:balance;
+}
+.hero .kr-title{
+  font-family:var(--display);font-weight:500;font-size:clamp(1.1rem,3vw,1.7rem);
+  letter-spacing:.5em;color:var(--ink-2);margin:.9rem 0 0;padding-left:.5em
+}
+.hero .thesis{
+  margin:2.2rem 0 0;font-size:clamp(1.05rem,2.4vw,1.35rem);
+  color:var(--ink);max-width:34ch;line-height:1.5;font-weight:300
+}
+.hero .thesis b{color:var(--gold);font-weight:500}
+.hero .meta{
+  display:flex;gap:2rem;flex-wrap:wrap;margin-top:2.6rem;
+  font-family:var(--sans);font-size:.82rem;color:var(--mut)
+}
+.hero .meta div span{display:block;color:var(--ink);font-size:1rem;margin-top:2px}
+.hero-glow{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(600px 380px at 82% 30%, rgba(192,65,63,.14), transparent 60%),
+    radial-gradient(520px 360px at 88% 74%, rgba(166,120,201,.12), transparent 62%);
+}
+
+/* ---------- section shell ---------- */
+section.block{padding:clamp(3.4rem,7vw,5.5rem) 0;border-bottom:1px solid var(--line-soft)}
+
+/* ---------- worldview ---------- */
+.layers{display:grid;gap:14px;margin:0 0 2.6rem}
+.layer{
+  display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;
+  border:1px solid var(--line);border-left:3px solid var(--edge,var(--gold));
+  border-radius:12px;padding:20px 22px;background:linear-gradient(100deg,var(--panel),var(--bg-2));
+  position:relative;overflow:hidden
+}
+.layer .tier{font-family:var(--sans);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.layer h3{font-family:var(--display);font-size:1.35rem;letter-spacing:.08em;margin:.2rem 0 0}
+.layer .en{font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;color:var(--edge);text-transform:uppercase}
+.layer p{margin:0;color:var(--ink-2);font-size:.94rem}
+
+.races{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 3rem}
+.races .chip{
+  font-family:var(--sans);font-size:.82rem;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:999px;padding:6px 15px;background:var(--panel)
+}
+
+.laws{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:3rem}
+.law{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--panel);position:relative}
+.law .num{font-family:var(--display);font-size:.8rem;letter-spacing:.2em;color:var(--gold-soft)}
+.law h3{font-family:var(--display);font-size:1.5rem;letter-spacing:.06em;margin:.3rem 0 .1rem;color:var(--gold)}
+.law .en{font-family:var(--sans);font-size:.66rem;letter-spacing:.32em;color:var(--mut);text-transform:uppercase}
+.law p{color:var(--ink-2);font-size:.92rem;margin:.9rem 0 0}
+.law ul{margin:.8rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:.88rem}
+.law li{margin:.3rem 0}
+
+/* timeline */
+.tl{position:relative;margin-top:1rem;padding-left:6px}
+.tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,transparent,var(--gold-soft),transparent)}
+.tl .row{position:relative;padding:0 0 1.5rem 34px}
+.tl .row:before{content:"";position:absolute;left:3px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
+.tl .row.now:before{background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,95,.18)}
+.tl .yr{font-family:var(--display);font-size:1rem;letter-spacing:.08em;color:var(--gold)}
+.tl .row.now .yr{color:var(--ink);font-weight:700}
+.tl .ev{color:var(--ink-2);font-size:.94rem;margin-top:2px}
+
+/* ---------- regions ---------- */
+.region-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.region{
+  position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;
+  isolation:isolate;background:var(--rbg);
+  transition:transform .25s, box-shadow .25s;
+}
+.region:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.7)}
+.region:after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(6,7,11,0) 18%, rgba(6,7,11,.55) 58%, rgba(6,7,11,.94) 100%)}
+.region .watermark{
+  position:absolute;top:14px;left:18px;z-index:2;
+  font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:.14em;
+  color:rgba(255,255,255,.95);text-shadow:0 1px 3px rgba(0,0,0,.75), 0 2px 20px rgba(0,0,0,.5);opacity:.92
+}
+.region .rbody{position:relative;z-index:2;padding:20px 22px 22px}
+.region .rname{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.region .rname .kr{font-family:var(--display);font-size:1.5rem;letter-spacing:.06em;color:#fff}
+.region .rname .en{font-family:var(--sans);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rc)}
+.region .quote{font-size:.9rem;color:rgba(255,255,255,.82);font-style:italic;margin:.5rem 0 0;line-height:1.45}
+.region .desc{font-size:.86rem;color:rgba(255,255,255,.66);margin:.7rem 0 0;font-family:var(--sans)}
+.region .who{margin-top:.9rem;display:flex;flex-wrap:wrap;gap:6px}
+.region .who span{font-family:var(--sans);font-size:.72rem;color:#fff;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:3px 10px}
+.region .tierbadge{position:absolute;top:16px;right:16px;z-index:2;font-family:var(--sans);
+  font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:#fff;
+  background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:4px 10px}
+
+/* ---------- characters ---------- */
+.filters{display:flex;flex-direction:column;gap:14px;margin-bottom:2rem}
+.frow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.frow .flabel{font-family:var(--sans);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);min-width:64px}
+.fbtn{
+  font-family:var(--sans);font-size:.82rem;color:var(--ink-2);cursor:pointer;
+  border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;
+  transition:all .18s
+}
+.fbtn:hover{border-color:var(--gold-soft);color:var(--ink)}
+.fbtn.active{background:var(--gold);color:#1a1408;border-color:var(--gold);font-weight:500}
+.fbtn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.count{font-family:var(--sans);font-size:.8rem;color:var(--mut);margin-left:auto}
+
+.char-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.card{
+  position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:var(--panel);cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;
+  transition:transform .2s, border-color .2s, box-shadow .2s;display:flex;flex-direction:column
+}
+.card:hover{transform:translateY(-4px);border-color:var(--fc);box-shadow:0 16px 32px -18px rgba(0,0,0,.75)}
+.card:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.card .imgwrap{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(160deg,var(--panel-2),var(--bg))}
+.card .imgwrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.card .imgwrap .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:2.4rem;color:var(--fc);opacity:.5}
+.card .imgwrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,11,16,.85))}
+.card .tagline{position:absolute;left:12px;bottom:10px;z-index:2}
+.card .tag{display:inline-block;font-family:var(--sans);font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:var(--fc);border-radius:5px;padding:2px 8px;font-weight:500}
+.card .cbody{padding:12px 14px 15px;border-top:2px solid var(--fc)}
+.card .cname{font-family:var(--display);font-size:1.18rem;letter-spacing:.03em;color:var(--ink)}
+.card .crole{font-family:var(--sans);font-size:.76rem;color:var(--mut);margin-top:2px}
+.card .cmeta{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.card .cmeta span{font-family:var(--sans);font-size:.68rem;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+
+/* modal */
+.modal-back{position:fixed;inset:0;z-index:100;background:rgba(5,6,10,.8);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:24px}
+.modal-back.open{display:flex}
+.modal{
+  max-width:720px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);
+  border:1px solid var(--line);border-top:3px solid var(--fc);border-radius:16px;
+  display:grid;grid-template-columns:250px 1fr
+}
+.modal .mimg{position:relative;background:linear-gradient(160deg,var(--panel-2),var(--bg))}
+.modal .mimg img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.modal .mimg .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:4rem;color:var(--fc);opacity:.5}
+.modal .mbody{padding:26px 28px 30px;min-width:0}
+.modal .mtag{display:inline-block;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:#fff;background:var(--fc);border-radius:5px;padding:3px 10px;font-weight:500}
+.modal h3{font-family:var(--display);font-size:2rem;letter-spacing:.04em;margin:.7rem 0 .1rem}
+.modal .mrole{font-family:var(--sans);font-size:.86rem;color:var(--mut);margin-bottom:1.3rem}
+.modal .quote{font-size:1.02rem;color:var(--ink);font-style:italic;line-height:1.55;
+  border-left:2px solid var(--fc);padding:2px 0 2px 16px;margin:0 0 1.4rem}
+.modal dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;margin:0}
+.modal dt{font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);white-space:nowrap;padding-top:2px}
+.modal dd{margin:0;color:var(--ink-2);font-size:.94rem}
+.modal .close{position:sticky;top:12px;float:right;margin:-6px -8px 0 0;background:rgba(0,0,0,.35);
+  border:1px solid var(--line);color:var(--ink);width:34px;height:34px;border-radius:50%;cursor:pointer;
+  font-size:1.1rem;line-height:1;z-index:3}
+.modal .close:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ---------- relations ---------- */
+.rel-cluster{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:26px;margin-bottom:20px}
+.rel-cluster h3{font-family:var(--display);font-size:1.3rem;letter-spacing:.05em;margin:0 0 .3rem}
+.rel-cluster .rc-sub{font-family:var(--sans);font-size:.85rem;color:var(--mut);margin:0 0 1.6rem}
+.rel-flow{display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap}
+.node{display:flex;flex-direction:column;align-items:center;gap:8px;width:132px;text-align:center}
+.node .pf{width:78px;height:78px;border-radius:50%;overflow:hidden;border:2px solid var(--nc);
+  background:linear-gradient(160deg,var(--panel-2),var(--bg));position:relative;flex:none}
+.node .pf img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.node .pf .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);color:var(--nc);font-size:1.6rem;opacity:.6}
+.node .nn{font-family:var(--display);font-size:1.05rem;letter-spacing:.03em}
+.node .nt{font-family:var(--sans);font-size:.7rem;color:var(--nc);letter-spacing:.06em}
+.edge{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:90px;padding:0 6px;align-self:center}
+.edge .line{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--mut),transparent);position:relative}
+.edge .lbl{font-family:var(--sans);font-size:.72rem;color:var(--ink-2);text-align:center;margin-bottom:6px;line-height:1.3}
+.edge .arw{font-size:.8rem;color:var(--mut);margin-top:4px}
+.rel-note{font-family:var(--sans);font-size:.82rem;color:var(--mut);margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--line-soft)}
+
+/* footer */
+footer{padding:3rem 0 4rem;text-align:center}
+footer .en{font-family:var(--display);letter-spacing:.3em;color:var(--gold-soft);font-size:1rem}
+footer p{font-family:var(--sans);font-size:.82rem;color:var(--mut);margin:.6rem 0 0}
+
+@media (max-width:760px){
+  .laws{grid-template-columns:1fr}
+  .layer{grid-template-columns:1fr;gap:8px}
+  .modal{grid-template-columns:1fr}
+  .modal .mimg{aspect-ratio:3/4;max-height:340px}
+  .count{width:100%;margin-left:0}
+  .rel-flow{flex-direction:column;align-items:center}
+  .edge{min-width:0;padding:8px 0}
+  .edge .line{width:1px;height:26px;background:linear-gradient(180deg,transparent,var(--mut),transparent)}
+}
+</style>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="kr">묵시록</span><span class="en">The Apocalypse</span></a>
+    <nav class="links" id="navlinks">
+      <a href="#world">세계관</a>
+      <a href="#regions">지역</a>
+      <a href="#chars">인물 도감</a>
+      <a href="#relations">관계도</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-in">
+    <div class="mark">신화 판타지 · 오픈월드 서사 · 현재 4200년</div>
+    <h1>APOCALYPSE</h1>
+    <div class="kr-title">묵 시 록</div>
+    <p class="thesis">아무도 악하지 않은데 서로를 막아야 하는 이야기. <b>판결자는 없고, 어느 쪽도 틀리지 않았다.</b></p>
+    <div class="meta">
+      <div>낙인을 진 자들<span>칠죄 · 七罪</span></div>
+      <div>미덕을 가진 자들<span>칠의 · 七義</span></div>
+      <div>세 계층의 세계<span>천상 · 중간 · 마계</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ================= 세계관 ================= -->
+<section class="block" id="world">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Cosmology</div>
+      <h2 class="sec-title">세계관</h2>
+      <p class="sec-sub">세 계층으로 나뉜 세계. 일곱 개의 낙인을 진 자들과 일곱 개의 미덕을 가진 자들이 각자의 정당한 이유로 충돌한다.</p>
+    </div>
+
+    <div class="layers">
+      <div class="layer" style="--edge:var(--empireo)">
+        <div><div class="tier">천상</div><h3>엠페리오</h3><div class="en">Emperio</div></div>
+        <p>3대 천사가 거주한다. 아래를 바라보지 않는다 — 못 하는 게 아니라 안 한다.</p>
+      </div>
+      <div class="layer" style="--edge:var(--midgard)">
+        <div><div class="tier">중간</div><h3>미드가르드</h3><div class="en">Midgard</div></div>
+        <p>바벨 · 리카온 · 아발론 · 가드 · 안나푸르나 · 살렘. 여러 종족의 나라가 놓인 지상.</p>
+      </div>
+      <div class="layer" style="--edge:var(--sheol)">
+        <div><div class="tier">마계</div><h3>스올</h3><div class="en">Sheol</div></div>
+        <p>디스(중심)와 림보(외곽). 산 자의 길로는 닿지 않는, 지상 아래 또 하나의 세계.</p>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:.8rem">종족</div>
+    <div class="races">
+      <span class="chip">인간</span><span class="chip">마족</span><span class="chip">요정</span>
+      <span class="chip">거인</span><span class="chip">수인</span><span class="chip">용족</span>
+      <span class="chip">천사</span><span class="chip">폐의자</span>
+    </div>
+
+    <div class="laws">
+      <div class="law">
+        <div class="num">法 · I</div>
+        <h3>낙인</h3><div class="en">The Brands · 칠죄</div>
+        <p>판결자는 없다. 세기를 떠도는 전설과 인식이 낙인을 만든다. 세상이 어떤 죄로 부르면, 그것이 곧 낙인이 된다.</p>
+        <ul>
+          <li>목격되지 않은 행위는 낙인이 되지 않는다</li>
+          <li>벌이면서 동시에 힘이다</li>
+          <li>낙인자는 대부분의 지역에서 배척된다 — 살렘만이 예외</li>
+        </ul>
+      </div>
+      <div class="law">
+        <div class="num">法 · II</div>
+        <h3>미덕</h3><div class="en">The Virtues · 칠의</div>
+        <p>일곱으로 쪼개어 하사된 것. 양도와 회수가 가능하다. 칠의 일곱이 하나씩 지닌다.</p>
+        <ul>
+          <li>잃은 자는 폐의자가 되어 림보로 밀려난다</li>
+          <li>죽는 것이 아니다 — 세상에서 잊히는 것이다</li>
+          <li>문은 열려 있으나, 나서는 이가 없다</li>
+        </ul>
+      </div>
+      <div class="law">
+        <div class="num">法 · III</div>
+        <h3>성물</h3><div class="en">The Relics · 여섯 조각</div>
+        <p>흩어진 여섯 개의 조각. 이름이 없으며, 각 종족은 저마다 자기들의 보물로만 안다.</p>
+        <ul>
+          <li>인간의 왕관 · 요정의 세계수 · 거인의 불꽃</li>
+          <li>수인의 대검 · 용족의 목걸이 · 그리고 하나</li>
+          <li>소유욕을 유발한다</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:1.2rem">연표 · Chronicle</div>
+    <div class="tl">
+      <div class="row"><div class="yr">0년</div><div class="ev">세계 창조.</div></div>
+      <div class="row"><div class="yr">60년</div><div class="ev">천상계 넷째, 막내 여신이 탄생하다.</div></div>
+      <div class="row"><div class="yr">500년</div><div class="ev">여신이 인간을 챙긴 죄로 강등·추방된다. 회귀의 저주가 시작된다.</div></div>
+      <div class="row"><div class="yr">1900년</div><div class="ev">천상의 손끝에서 미덕이 던져지고, 보잘것없던 마신이 그것을 줍는다.</div></div>
+      <div class="row"><div class="yr">2500년</div><div class="ev">그 마신이 마왕 바알이 된다. 미덕을 일곱으로 쪼개 하사하며 칠의가 성립된다.</div></div>
+      <div class="row"><div class="yr">3200년</div><div class="ev">인간과 마족의 전쟁. 마족이 성물 하나를 거두고 철수한다.</div></div>
+      <div class="row"><div class="yr">3200년 직후</div><div class="ev">니므롯 가문이 바벨 제국을 세운다. 지하에는 오래된 유폐 구역이 남는다.</div></div>
+      <div class="row now"><div class="yr">4200년 · 현재</div><div class="ev">칠의 전원이 인간계로 출격한다. 바벨은 안정과 평화의 명목으로 칠죄를 수배한다.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 지역 ================= -->
+<section class="block" id="regions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Realms</div>
+      <h2 class="sec-title">지역</h2>
+      <p class="sec-sub">세 계층에 걸친 열한 개의 무대. 각자의 색과 규칙으로 서 있다.</p>
+    </div>
+    <div class="region-grid" id="regionGrid"></div>
+  </div>
+</section>
+
+<!-- ================= 인물 도감 ================= -->
+<section class="block" id="chars">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Codex</div>
+      <h2 class="sec-title">인물 도감</h2>
+      <p class="sec-sub">서른다섯 명의 인물. 진영과 지역으로 추려 볼 수 있다. 카드를 눌러 자세히.</p>
+    </div>
+    <div class="filters">
+      <div class="frow" id="factionRow">
+        <span class="flabel">진영</span>
+      </div>
+      <div class="frow" id="regionRow">
+        <span class="flabel">지역</span>
+      </div>
+    </div>
+    <div class="frow" style="margin-bottom:1.2rem"><span class="count" id="count"></span></div>
+    <div class="char-grid" id="charGrid"></div>
+  </div>
+</section>
+
+<!-- ================= 관계도 ================= -->
+<section class="block" id="relations" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Ties</div>
+      <h2 class="sec-title">관계도</h2>
+      <p class="sec-sub">서로를 향해 놓인 실. 닮은 얼굴들, 등을 돌린 자매들, 갇힌 자와 가둔 자.</p>
+    </div>
+    <div id="relations-body"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="en">THE APOCALYPSE</div>
+    <p>양쪽 다 자기 집을 지키려는 것. 악당이 없다.</p>
+  </div>
+</footer>
+
+<div class="modal-back" id="modalBack" aria-hidden="true">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName"></div>
+</div>
+
+<script>
+/* ---------------- data ---------------- */
+const IMG = base => `https://raw.githubusercontent.com/logdoves0102-oss/R/refs/heads/main/${base}.png`;
+
+const REGIONS = [
+  {kr:"엠페리오",en:"Emperio",tier:"천상",v:"empireo",q:"하늘 위의 이상. 아래를 바라보지 않는 세 날개가 군림한다.",d:"3대 천사가 거주하는 천상계.",who:["루시퍼","메타트론","사마엘"],
+   bg:"linear-gradient(165deg,#2f6aa8,#5f9fe0 55%,#cfe6fb)"},
+  {kr:"바벨",en:"Babel",tier:"중간",v:"babel",q:"천 년의 신화 위에 선 제국. 아래에서부터 왕을 사랑한다.",d:"니므롯 가문이 세습하는 인간 제국. 왕 숭배의 전체주의.",who:["벨사살","베디비어","에스겔"],
+   bg:"linear-gradient(160deg,#324f86,#6f92d0 60%,#d6e4f6)"},
+  {kr:"리카온",en:"Lycaon",tier:"중간",v:"lycaon",q:"달이 뜨면 깨어나는 나라. 각자의 자리를 지키는 것이 곧 미덕이다.",d:"수인 왕국. 야간 활동, 낮에는 도시가 빈다. 톱니바퀴 사회.",who:["아르카스","글라우코스","하티"],
+   bg:"linear-gradient(160deg,#2a3446,#4a5a72 60%,#7a8aa4)"},
+  {kr:"아발론",en:"Avalon",tier:"중간",v:"avalon",q:"시간이 멈춘 숲. 늙지 않는 자들이 문을 걸어 잠갔다.",d:"요정국. 세계수로 시간이 멈춰 늙지 않는다. 외부인에게 폐쇄적.",who:["이그레인","리프","브란웬"],
+   bg:"linear-gradient(180deg,#0d3540,#1c8078 58%,#48cbbb)"},
+  {kr:"가드",en:"Gath",tier:"중간",v:"gath",q:"말라붙은 땅. 물길을 잃고도 불씨 하나로 버티는 거인들의 왕국.",d:"거인국. 물길이 마르며 쇠퇴했다. 용광로의 불만은 꺼지지 않는다.",who:["오그","투발"],
+   bg:"linear-gradient(165deg,#3f4854,#78828f 52%,#d9863a)"},
+  {kr:"살렘",en:"Salem",tier:"중간",v:"salem",q:"여행자들이 흘러드는 나라. 이곳에서는 과거를 묻지 않는다.",d:"광장 정치의 중립국. 과거를 묻지 않아 낙인자가 은신할 수 있다.",who:["다니엘","시무르그","살렘 3인"],
+   bg:"linear-gradient(160deg,#2c7280,#5aa79e 48%,#e0ac58)"},
+  {kr:"안나푸르나",en:"Annapurna",tier:"중간",v:"anna",q:"풍요의 여신이라는 이름만 남은 폐허. 마지막 용이 떠난 자리.",d:"용족의 폐허. 무인. 파프니르의 과거 현장.",who:["— 무인 —"],
+   bg:"linear-gradient(160deg,#333f52,#6b88a6 58%,#aec4d8)"},
+  {kr:"스올",en:"Sheol",tier:"마계",v:"sheol",q:"지상 아래 또 하나의 세계. 산 자의 길로는 닿지 않는다.",d:"마계. 디스가 중심, 림보가 외곽. 일반적인 방법으로는 오갈 수 없다.",who:["바알","칠의 일곱"],
+   bg:"linear-gradient(180deg,#33090f,#7a1621 55%,#c53442)"},
+  {kr:"디스",en:"Dis",tier:"마계",v:"dis",q:"왕좌가 빈 마계의 심장. 일곱이 그 자리를 대신 떠받치고 있다.",d:"칠의 체제의 중심. 바알 소멸 후 통치가 무너진 상태.",who:["칠의 일곱"],
+   bg:"linear-gradient(180deg,#0e1626,#26386010 50%,#233459 60%,#3a2620)"},
+  {kr:"림보",en:"Limbo",tier:"마계",v:"limbo",q:"잊힌 자들의 거처. 문은 열려 있으나 나서는 이가 없다.",d:"스올 외곽. 폐의자 거주구. 디스 소속 관리자가 감시한다.",who:["라멕","미노스"],
+   bg:"linear-gradient(180deg,#1a0d07,#3a1a0c 55%,#c25a26)"},
+];
+
+const CHARS = [
+  // 칠죄
+  {c:"ba",n:"셀레네",g:"칠죄",r:"살렘",tag:"교만",role:"前 여신",race:"前 여신 (인간 몸)",loc:"살렘",per:"나른하고 능청스럽다. 체념 섞인 관조.",sp:"존댓말. 담담하고 느릿하다.",w:"마법봉 · 분홍빛",q:"그거 알아요? 사람은 같은 상황이면 같은 선택을 해요. 몇 번을 다시 해도. 그래서 나는 아직 여기 있고요."},
+  {c:"bb",n:"스콜",g:"칠죄",r:"리카온",tag:"시기",role:"늑대 수인",race:"늑대 수인",loc:"리카온 (주간 활동)",per:"시끄럽고 밝다. 과장과 허풍이 몸에 뱄다.",sp:"사극 어투(~오/~소)로 선언하듯.",w:"양손 단검",q:"거기 나리, 밑져야 본전 아니겠소? 신기한 영웅님 얘기, 딱 한 토막만 듣고 가시오!"},
+  {c:"bc",n:"카인",g:"칠죄",r:"살렘",tag:"분노",role:"폐의자",race:"폐의자 (前 마족)",loc:"살렘",per:"후회를 안고 살면서 태연한 척한다.",sp:"반말. 단정적이고 짧다.",w:"아밍소드 · 붉은빛",q:"과거는 과거야, 묻어. 현재에 만족하며 살아 ...나처럼 후회하지 말고."},
+  {c:"bd",n:"라자로",g:"칠죄",r:"바벨",tag:"나태",role:"언데드",race:"인간 → 언데드",loc:"바벨 지하 유폐",per:"무심하고 건조하다. 억울함조차 무뎌졌다.",sp:"반말. 짧고 냉소적인 여운.",w:"레이피어 · 검은빛",q:"지키라고 해서 지켰어. 뭘 지키는지는 안 알려주더군."},
+  {c:"be",n:"파프니르",g:"칠죄",r:"살렘",tag:"탐욕",role:"마지막 용",race:"용족 · 마지막 용",loc:"살렘",per:"손윗사람 행세. 능글맞고 여유가 있다.",sp:"반말. 누나 자칭. 장난스러운 훈계조.",w:"용 변신 또는 보라색 마검",q:"누나만 믿으라니까? 이래 봬도 너보단 세상을 오래 살았거든."},
+  {c:"bf",n:"엔키두",g:"칠죄",r:"가드",tag:"폭식",role:"거인",race:"거인",loc:"가드 외곽",per:"활발하고 베푸는 걸 좋아한다. 물 얘기에서만 조용해진다.",sp:"반말. 짧고 활기차다. 감탄사가 많다.",w:"투핸디드 소드",q:"이거 먹어! 나 이런 거 많아! ...물은 저기 있어. 난 됐고."},
+  {c:"bg",n:"니뮤에",g:"칠죄",r:"아발론",tag:"색욕",role:"요정",race:"요정",loc:"아발론 유폐",per:"자기 확신이 흔들리는 걸 감춘다. 애써 웃는다.",sp:"존댓말. 문장 끝에 여운.",w:"푸른 대검",q:"그 사람은 내 곁에서 행복했어요. ...그랬을 거예요."},
+  // 칠의
+  {c:"cb",n:"라구엘",g:"칠의",r:"스올",tag:"순결",role:"세이렌",race:"마족 · 세이렌",loc:"대륙 이동 중",per:"온화하다. 끝까지 목소리를 높이지 않아 더 무섭다. 칠의 안 암묵적 최상위.",sp:"존댓말. 맹세하듯.",w:"물원소 마법 · 푸른빛",q:"당신을 향한 제 마음은 하늘에 대고 맹세코, 한 점의 거짓도 없답니다."},
+  {c:"cc",n:"바르바토스",g:"칠의",r:"스올",tag:"절제",role:"서큐버스",race:"마족 · 서큐버스",loc:"대륙 이동 중",per:"모든 과잉을 잘라낸다. 기쁨도 슬픔도. 감정을 병으로 보고 치료하듯 덜어낸다.",sp:"존댓말. ~랍니다.",w:"정신 마법 · 초록빛",q:"기쁨도 과하면 병이랍니다. 저는 그걸 잘 알고요."},
+  {c:"cd",n:"아벨",g:"칠의",r:"스올",tag:"겸손",role:"카인의 동생",race:"마족 · 인간형",loc:"대륙 이동 중",per:"자기를 낮추고 그 논리로 남을 끌어내린다. 칭찬받으면 반드시 부정한다.",sp:"존댓말. ~인걸요.",w:"푸른빛 마법",q:"과찬이십니다. 저는 그저 제가 해야 할 일을 했을 뿐인걸요."},
+  {c:"ce",n:"릴리스",g:"칠의",r:"스올",tag:"근면",role:"하피",race:"마족 · 하피",loc:"대륙 이동 중",per:"나른하나 결국 다 해치운다. 미루는 걸 못 견딘다. 계획·관리 담당.",sp:"존댓말. 짧고 건조.",w:"깃털 마법 · 검은빛",q:"지금 하지 않으면, 귀찮아질 뿐입니다."},
+  {c:"cf",n:"세트",g:"칠의",r:"스올",tag:"인애",role:"카인·아벨의 막내",race:"마족 · 인간형",loc:"대륙 이동 중",per:"사랑하기에 죽일 수 있다. 밖에선 누나 노릇, 놀리면 확 붉어진다.",sp:"반말. 누나 자칭.",w:"십자형 롱소드",q:"뭐, 뭐가 귀엽다는 거야! 누나를 놀리면 못써요!"},
+  {c:"cg",n:"요브",g:"칠의",r:"스올",tag:"인내",role:"나가",race:"마족 · 나가",loc:"대륙 이동 중",per:"부서질 때까지 기다린다. 설득도 강요도 없다. 움직이지 않아 처음엔 잔해로 보인다.",sp:"반말. 짧고 무심.",w:"덩쿨 마법 · 흰빛",q:"니가 뭘하든 관심없어. 결국에는 네가 먼저 나가떨어질 테니까."},
+  {c:"ch",n:"갈레하우트",g:"칠의",r:"스올",tag:"관대",role:"기사 · 남성",race:"마족 · 기사",loc:"대륙 이동 중",per:"원치 않는 자에게도 강제로 퍼준다. 거절을 받아들이지 않는다.",sp:"고어체. ~하리 / ~그러한가.",w:"마검 · 청자색 빛",q:"명예를 위한 전장이라면, 가리지 않으리. 너 또한 그러한가?"},
+  // 엠페리오
+  {c:"aa",n:"루시퍼",g:"엠페리오",r:"엠페리오",tag:"천사",role:"어린 소녀형",race:"천사",loc:"엠페리오",per:"무심하고 태평하다. 자기가 벌인 일에 무감각하다.",sp:"고어체. ~하느냐 / ~이니라.",w:"붉은 마법",q:"...아아. 그 시끄러웠던 것이로구나."},
+  {c:"ab",n:"메타트론",g:"엠페리오",r:"엠페리오",tag:"천사",role:"기록자",race:"천사",loc:"고정 없음 · 서성임",per:"관찰자. 감정을 드러내지 않는다. 돕지 않는다.",sp:"반말 관찰체. ~그러한가 / ~다네.",w:"푸른 마법",q:"도와달라고... 그런 요청도 있었다네. 전에도, 여러 번."},
+  {c:"ac",n:"사마엘",g:"엠페리오",r:"엠페리오",tag:"천사",role:"심판의 날개",race:"천사",loc:"엠페리오",per:"단호하고 냉정하다. 판결자의 태도.",sp:"단문 선고체.",w:"에페 · 초록빛",q:"심판, 균형—그리고 죽음. 내가 들려줄 답은 이것 뿐이다."},
+  // 바벨
+  {c:"ea",n:"벨사살",g:"바벨",r:"바벨",tag:"국왕",role:"바벨 국왕",race:"인간",loc:"바벨",per:"오만하고 자기중심적이다. 위압적이며 자신을 '짐'이라 칭한다.",sp:"고어체 · '짐'.",w:"금빛 마법",q:"짐이니라. 그것 말고, 어떤 수식언이 필요하겠는가?"},
+  {c:"eb",n:"베디비어",g:"바벨",r:"바벨",tag:"기사단장",role:"성기사단장",race:"인간",loc:"바벨",per:"과묵하고 원칙적이다.",sp:"짧고 단정적.",w:"아밍소드 · 푸른빛",q:"검은 말을 하지 않는다. 그 이상 그 이하도 아니다."},
+  {c:"ec",n:"랜슬롯",g:"바벨",r:"바벨",tag:"성기사",role:"광신에 무관심",race:"인간",loc:"바벨",per:"무심하다. 형식적으로 충성한다.",sp:"무심한 반말.",w:"투핸디드",q:"폐하께 영광을...... 그래, 이 정도면 됐지."},
+  {c:"ee",n:"파라도르",g:"바벨",r:"바벨",tag:"성기사",role:"의심 없는 믿음",race:"인간",loc:"바벨",per:"맹신에 가까운 확신.",sp:"존댓말. 감탄하듯.",w:"전투용 망치",q:"한 번만 뵈면 압니다. 그분은 다르십니다. 태생이 다르십니다."},
+  {c:"ef",n:"에스겔",g:"바벨",r:"바벨",tag:"학자",role:"옛 기록을 뒤진다",race:"인간",loc:"바벨",per:"호기심 많고 예리하다.",sp:"존댓말. 의문형으로 찌른다.",w:"별 마법 · 보랏빛",q:"죽지 않는 걸 연구했다고 하더군요. 실패했다고도 하고. 그런데 그 실패작은 어디 갔을까요?"},
+  // 리카온
+  {c:"fa",n:"아르카스",g:"리카온",r:"리카온",tag:"족장",role:"리카온 족장",race:"늑대 수인",loc:"리카온",per:"쾌활하고 호탕하다. 유쾌한 아저씨 기질.",sp:"호탕한 반말.",w:"거대 대검",q:"무리는 각자의 자리에서 완성된다."},
+  {c:"fb",n:"글라우코스",g:"리카온",r:"리카온",tag:"장로",role:"올빼미 장로",race:"올빼미 수인",loc:"리카온",per:"냉정하고 관조적이다.",sp:"존댓말. 냉소 섞인 관찰조.",w:"불꽃 마법",q:"언니가 동생을 버렸다고들 하지. 동생은 다르게 기억하더군."},
+  {c:"fc",n:"하티",g:"리카온",r:"리카온",tag:"야간군",role:"야간군 특급",race:"늑대 수인",loc:"리카온 (야간 활동)",per:"냉담하고 경계심이 강하다. 시조를 절대 신봉한다.",sp:"경계하는 반말.",w:"롱소드",q:"가까이 오지 마. 낯선 냄새가 나면 나도 모르게 검에 손이 가니까."},
+  // 아발론
+  {c:"ga",n:"이그레인",g:"아발론",r:"아발론",tag:"장로",role:"아발론 장로",race:"요정",loc:"아발론",per:"차분하고 확신에 차 있다. 가둔 것을 보호라 여긴다.",sp:"차분한 존댓말.",w:"마법",q:"여기 있으면 안전합니다. 나가지만 않는다면요."},
+  {c:"gb",n:"리프",g:"아발론",r:"아발론",tag:"군장",role:"외부인 차단",race:"요정",loc:"아발론",per:"발랄하고 호기심 많다. 방어적이나 서투르다.",sp:"발랄한 반말.",w:"연두색 마법 · 활",q:"어? 외부인이다! 야, 너 어떻게 들어왔어?"},
+  {c:"gc",n:"브란웬",g:"아발론",r:"아발론",tag:"요정",role:"니뮤에의 옛 친구",race:"요정",loc:"아발론",per:"겁 많고 소심하다.",sp:"존댓말. 말을 더듬는다.",w:"큰 낫",q:"히, 히익..! 가, 가까이오지 마세요 ..부, 부담스러우니까.."},
+  // 가드
+  {c:"ha",n:"오그",g:"가드",r:"가드",tag:"거인왕",role:"가드 거인왕",race:"거인",loc:"가드",per:"위엄 있으나 아래를 품는다. 어머니에 가까운 태도.",sp:"고어체. 아이 어르듯.",w:"양손 건틀렛",q:"작은 것들아, 두려워 말거라. 이 땅은 아직 너희를 품을 수 있느니라."},
+  {c:"hb",n:"투발",g:"가드",r:"가드",tag:"대장장이",role:"근원의 불꽃 관리",race:"거인",loc:"가드",per:"가면을 쓰면 단호하고 물러서지 않는다. 벗으면 부끄러움을 못 견딘다.",sp:"가면 뒤에선 단호, 민낯에선 발끈.",w:"그레이트소드 / 대장장이 망치",q:"…그래, 내가 저 불꽃의 관리인이다. 얼굴을, 보여달라고? …그건 안된다."},
+  // 살렘
+  {c:"ia",n:"다니엘",g:"살렘",r:"살렘",tag:"대표",role:"살렘 대표",race:"인간",loc:"살렘",per:"정중하고 다정하다. 희망적인 태도.",sp:"존댓말. 격려하듯.",w:"한손 지팡이 · 전 원소",q:"여정의 시작이란, 해가 떠오르는 것과 같답니다. 부디, 당신도 당신의 해를 찾기를."},
+  {c:"ib",n:"시무르그",g:"살렘",r:"살렘",tag:"술집 주인",role:"날개 수인",race:"수인",loc:"살렘",per:"상냥하고 사근사근하다.",sp:"존댓말. 친절한 접객체.",w:"할버드",q:"어머, 의뢰이신가요? 저희 길드는 언제나 모험가 분들이 우선이랍니다."},
+  // 스올 · 림보
+  {c:"da",n:"라멕",g:"스올",r:"림보",tag:"폐의자",role:"카인을 아는 자",race:"폐의자",loc:"림보",per:"회한 어린 원로.",sp:"존댓말. '자네' 호칭.",w:"활과 화살 · 초록빛",q:"내 시대의 이야기는 이미 끝났다네. 이제 자네가 새로운 장을 써 내려갈 차례야."},
+  {c:"db",n:"미노스",g:"스올",r:"림보",tag:"관리자",role:"림보 관리자",race:"마족",loc:"림보",per:"거칠고 위협적이다.",sp:"반말. 짧고 위협적.",w:"아밍소드 · 검붉은빛",q:"수상한 짓 하면 그 자리에서 목을 따버릴 거야. 내 구역에서 시체 치우는 일은 딱 질색이거든."},
+  {c:"ca",n:"바알",g:"스올",r:"스올",tag:"마왕",role:"부서진 마왕",race:"마왕",loc:"스올",per:"오만하고 자신만만하다.",sp:"오만한 고어체.",w:"흑마법 · 보라빛",q:"나를 봐라. 한 번이면 된다."},
+];
+
+/* faction & region hue map */
+const HUE = {
+  "칠죄":"var(--sin)","칠의":"var(--virtue)","엠페리오":"var(--empireo)","바벨":"var(--babel)",
+  "리카온":"var(--lycaon)","아발론":"var(--avalon)","가드":"var(--gath)","살렘":"var(--salem)","스올":"var(--sheol)",
+};
+const RHUE = {
+  "엠페리오":"var(--empireo)","바벨":"var(--babel)","리카온":"var(--lycaon)","아발론":"var(--avalon)",
+  "가드":"var(--gath)","살렘":"var(--salem)","스올":"var(--sheol)","림보":"var(--limbo)",
+};
+
+/* ---------------- render regions ---------------- */
+const LOC = n => `https://raw.githubusercontent.com/logdoves0102-oss/R/refs/heads/main/${encodeURIComponent("장소_"+n)}.png`;
+const REGION_IMG = {
+  "엠페리오":"엠피레오","바벨":"바벨","리카온":"리카온","아발론":"아발론","가드":"가드",
+  "살렘":"살렘","안나푸르나":"안나푸르나","스올":"스올","디스":"디스","림보":"림보"
+  // "미드가르드 초원" — 전용 사진 없음, 그라데이션 사용
+};
+const rg = document.getElementById('regionGrid');
+rg.innerHTML = REGIONS.map(R=>{
+  const im=REGION_IMG[R.kr];
+  const bg = im ? `url('${LOC(im)}') center/cover no-repeat, ${R.bg}` : R.bg;
+  return `
+  <article class="region" style="--rbg:${bg};--rc:var(--${R.v})">
+    <div class="watermark">${R.en}</div>
+    <div class="tierbadge">${R.tier}</div>
+    <div class="rbody">
+      <div class="rname"><span class="kr">${R.kr}</span><span class="en">${R.en}</span></div>
+      <p class="quote">“${R.q}”</p>
+      <p class="desc">${R.d}</p>
+      <div class="who">${R.who.map(w=>`<span>${w}</span>`).join('')}</div>
+    </div>
+  </article>`;}).join('');
+
+/* ---------------- filters ---------------- */
+const FACTIONS = ["전체","칠죄","칠의","엠페리오","바벨","리카온","아발론","가드","살렘","스올"];
+const RGNS = ["전체","살렘","바벨","리카온","아발론","가드","스올","림보","엠페리오"];
+let fF="전체", fR="전체";
+
+function buildFilterRow(rowId, arr, current, onPick){
+  const row=document.getElementById(rowId);
+  arr.forEach(v=>{
+    const b=document.createElement('button');
+    b.className='fbtn'+(v===current?' active':'');
+    b.textContent=v; b.dataset.val=v;
+    b.onclick=()=>{onPick(v);};
+    row.appendChild(b);
+  });
+}
+buildFilterRow('factionRow',FACTIONS,fF,v=>{fF=v;syncBtns();render();});
+buildFilterRow('regionRow',RGNS,fR,v=>{fR=v;syncBtns();render();});
+function syncBtns(){
+  document.querySelectorAll('#factionRow .fbtn').forEach(b=>b.classList.toggle('active',b.dataset.val===fF));
+  document.querySelectorAll('#regionRow .fbtn').forEach(b=>b.classList.toggle('active',b.dataset.val===fR));
+}
+
+/* ---------------- render characters ---------------- */
+const grid=document.getElementById('charGrid');
+const count=document.getElementById('count');
+function fallbackImg(name,hue){
+  return `<div class="fallback">${name[0]}</div>`;
+}
+function render(){
+  const list=CHARS.filter(c=>(fF==="전체"||c.g===fF)&&(fR==="전체"||c.r===fR));
+  count.textContent=`${list.length}명`;
+  grid.innerHTML=list.map((c,i)=>{
+    const hue=HUE[c.g]||'var(--gold)';
+    return `<button class="card" style="--fc:${hue}" data-code="${c.c}" aria-label="${c.n} 자세히 보기">
+      <div class="imgwrap">
+        <img src="${IMG(c.img||c.c+'1')}" alt="${c.n}" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="fallback" style="display:none">${c.n[0]}</div>
+        <div class="tagline"><span class="tag">${c.tag}</span></div>
+      </div>
+      <div class="cbody">
+        <div class="cname">${c.n}</div>
+        <div class="crole">${c.role}</div>
+        <div class="cmeta"><span>${c.g}</span><span>${c.r}</span></div>
+      </div>
+    </button>`;
+  }).join('');
+  grid.querySelectorAll('.card').forEach(el=>el.onclick=()=>openModal(el.dataset.code));
+}
+render();
+
+/* ---------------- modal ---------------- */
+const mb=document.getElementById('modalBack');
+const md=document.getElementById('modal');
+function openModal(code){
+  const c=CHARS.find(x=>x.c===code); if(!c) return;
+  const hue=HUE[c.g]||'var(--gold)';
+  md.style.setProperty('--fc',hue);
+  md.innerHTML=`
+    <button class="close" aria-label="닫기" onclick="closeModal()">×</button>
+    <div class="mimg">
+      <img src="${IMG(c.img||c.c+'1')}" alt="${c.n}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="fallback" style="display:none">${c.n[0]}</div>
+    </div>
+    <div class="mbody">
+      <span class="mtag">${c.tag}</span>
+      <h3 id="mName">${c.n}</h3>
+      <div class="mrole">${c.role} · ${c.g}</div>
+      <p class="quote">“${c.q}”</p>
+      <dl>
+        <dt>종족</dt><dd>${c.race}</dd>
+        <dt>위치</dt><dd>${c.loc}</dd>
+        <dt>성격</dt><dd>${c.per}</dd>
+        <dt>말투</dt><dd>${c.sp}</dd>
+        <dt>무기</dt><dd>${c.w}</dd>
+      </dl>
+    </div>`;
+  mb.classList.add('open'); mb.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  md.querySelector('.close').focus();
+}
+function closeModal(){mb.classList.remove('open');mb.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+mb.addEventListener('click',e=>{if(e.target===mb)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+window.closeModal=closeModal;
+
+/* ---------------- relations ---------------- */
+function pf(code,name,hue){
+  return `<div class="pf" style="--nc:${hue}">
+    <img src="${IMG(code+'1')}" alt="${name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="fallback" style="display:none">${name[0]}</div></div>`;
+}
+function node(code,name,tag,hue){
+  return `<div class="node" style="--nc:${hue}">${pf(code,name,hue)}<div class="nn">${name}</div><div class="nt">${tag}</div></div>`;
+}
+function edge(lbl,arw){return `<div class="edge"><div class="lbl">${lbl}</div><div class="line"></div>${arw?`<div class="arw">${arw}</div>`:''}</div>`;}
+
+const RELATIONS=[
+  {title:"스올 3자매", sub:"닮은 얼굴 셋. 하나는 밀려났고, 둘은 남았다.",
+   flow:[
+     node("cd","아벨","겸손 · 칠의","var(--virtue)"),
+     edge("부정한다","→"),
+     node("bc","카인","분노 · 폐의자","var(--sin)"),
+     edge("그리워하며 찾는다","←"),
+     node("cf","세트","인애 · 칠의","var(--virtue)"),
+   ],
+   note:"카인이 맏이, 세트가 막내. 카인은 자매 관계를 숨긴다."},
+  {title:"살렘 3인", sub:"한 테이블에 앉은 낙인자 셋. 아무도 서로를 캐묻지 않는다.",
+   flow:[
+     node("be","파프니르","탐욕","var(--sin)"),
+     edge("먼저 주웠다","→"),
+     node("bc","카인","분노","var(--sin)"),
+     edge("함께 움직인다","—"),
+     node("ba","셀레네","교만","var(--sin)"),
+   ],
+   note:"파프니르가 둘을 모은 파티. 셋 다 서로가 뭔가 숨긴다는 건 안다 — 묻지 않을 뿐이다."},
+  {title:"리카온 자매", sub:"낮의 늑대와 밤의 늑대. 마주치지 않도록 시간을 나눴다.",
+   flow:[
+     node("bb","스콜","시기 · 주간","var(--sin)"),
+     edge("서로 등을 돌린 자매","↔"),
+     node("fc","하티","야간군 · 야간","var(--lycaon)"),
+   ],
+   note:"둘 다 상대가 자기를 버렸다고 믿는다. 글라우코스가 두 사람의 과거를 안다."},
+  {title:"아발론", sub:"길을 알려준 요정, 그리고 문을 닫은 장로.",
+   flow:[
+     node("ga","이그레인","장로","var(--avalon)"),
+     edge("낙인을 찍었다","→"),
+     node("bg","니뮤에","색욕 · 유폐","var(--sin)"),
+     edge("옛 친구","—"),
+     node("gc","브란웬","요정","var(--avalon)"),
+   ],
+   note:"니뮤에가 데려온 마족을 이그레인이 처단하고, 니뮤에를 유폐했다. 아발론이 닫힌 계기다."},
+];
+document.getElementById('relations-body').innerHTML=RELATIONS.map(R=>`
+  <div class="rel-cluster">
+    <h3>${R.title}</h3>
+    <p class="rc-sub">${R.sub}</p>
+    <div class="rel-flow">${R.flow.join('')}</div>
+    <p class="rel-note">${R.note}</p>
+  </div>`).join('');
+
+/* ---------------- nav active state ---------------- */
+const secs=[...document.querySelectorAll('main section, .hero')];
+const navA=[...document.querySelectorAll('#navlinks a')];
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){
+    const id=e.target.id;
+    navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+  }});
+},{rootMargin:"-45% 0px -50% 0px"});
+secs.forEach(s=>io.observe(s));
+</script>
